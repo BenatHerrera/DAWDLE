@@ -1,12 +1,51 @@
-.PRINCIPAL {
-    text-align: center;
+html{
 
+    margin-top: 10%;
 }
 
-.JUGAR{
+
+.PRINCIPAL {
+    text-align: center;
+    text-shadow: 5px 5px 5px  rgba(10, 36, 107, 0.2);;
+}
+
+#JUGAR{
 
     background-color: blue;
     color: azure;
     border-radius: 0.5rem;
+    height: 35px;
+    width: 85px;
+}
+
+#intentos{
+    margin-top: 0.5rem;
+    width: 50px;
+    align-items: stretch;
+    text-align: end;
+}
+
+#letras{
+    margin-top: 0.5rem;
+    width: 50px;
+    align-items: stretch;
+    text-align: end;
+    
+}
+
+form{
+    background-color: rgb(241, 29, 72);
+    align-items: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 3rem;
+    box-shadow: 5px 5px 5px 5px rgba(10, 36, 107, 0.2);;
+}
+
+label {
+    font-family: 'Pixel Code', 'ArcadeClassic', monospace;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+
 }
 
