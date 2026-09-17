@@ -4,25 +4,61 @@ html{
 }
 
 
-.PRINCIPAL {
+#PRINCIPAL {
+    /*esconder de momento con */
+    /*display:none;*/
     text-align: center;
-    text-shadow: 5px 5px 5px  rgba(10, 36, 107, 0.2);;
+    text-shadow: 1px 2px 2px  rgb(255, 255, 255);;
 }
 
-#JUGAR{
+/* #JUGAR{
 
-    background-color: blue;
-    color: azure;
-    border-radius: 0.5rem;
-    height: 35px;
-    width: 85px;
+  
+  background-color: #007bff; 
+  color: white;              
+  padding: 10px 20px;       
+  border: none;              
+  border-radius: 5px;        
+  font-size: 16px;           
+  cursor: pointer;          
+  transition: background-color 0.3s ease; 
 }
+
+#JUGAR:hover {
+  background-color: #0056b3; 
+} */
+
+#JUGAR {
+  background-color: transparent; 
+  border: none;                   
+  padding: 0;                     
+  cursor: pointer;
+  transition: transform 0.2s ease; /* efecto al pasar el ratón */
+}
+
+#JUGAR:hover {
+  transform: scale(1.05); /*  la imagen crece un poco al pasar el ratón */
+}
+
+#JUGAR img {
+  width: 100px;   
+  height: 100px;
+  display: block;
+}
+
+
+
+
 
 #intentos{
     margin-top: 0.5rem;
     width: 50px;
     align-items: stretch;
     text-align: end;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12%;
+    
+
 }
 
 #letras{
@@ -30,6 +66,8 @@ html{
     width: 50px;
     align-items: stretch;
     text-align: end;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12%;
     
 }
 
