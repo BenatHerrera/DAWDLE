@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        
+        <!--TITULO DE JUEGO-->
+        <title>WORDLE BEÑAT</title>
+            
+            <!--REFERENCIAS CSS/JS-->
+            <link rel="stylesheet" href="css/DAWDLE.css">
+            <script src="js/DAWDLE.js"></script>
+
+
+
+    </head>
+
+    <body>
+        <div id="PRINCIPAL";>
+        <!--DIV PRINCIPAL PARA METER NUMERO DE INTENTOS Y NUMERO DE LETRAS-->
+            
+             <form> 
+
+                <br><br>
+                <h1 style="text-align:center;">DAWDLE</h1>
+                <p style="text-align:center; color: dimgray;">(Just Another Wordle Clone)</p>
+
+
+                <!--SELECCIONADOR DE INTENTOS-->
+
+                <label for="numero de intentos"><strong> Intentos </strong></label><br>
+                   <select id="intentos" name="letra">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    </select>
+                <br><br>
+
+                <!--SELECCIONADOR DE LETRAS-->
+                <label for="numero de letras"><strong> Letras </strong></label><br>
+                    <select id="letras" name="letra">
+
+                    <option value="1">4</option>
+                    <option value="2">5</option>
+                    <option value="3">6</option>
+                    <option value="1">7</option>
+
+                    </select>
+                    <br><br>
+                    
+                    <!--BOTON JS QUE PERMITA JUGAR-->
+
+                    <button id = "JUGAR">
+                        <img src="img/JUGAAR.png">
+
+                        <!--JUGAR-->
+                    </button>
+                    <br><br><br><br>
+                </form>
+            </div>
+
+
+
+
+
+
+        
+
+        </div>
+
+        <!--DIV OCULTO PARA QUE CUANDO DESAPAREZCA EL DIV DE ARRIBA APAREZCA ESTE-->
+
+        <div class="JUEGO" >
+
+            
+
+        </div>
+
+    </body>
+
+
+</html>

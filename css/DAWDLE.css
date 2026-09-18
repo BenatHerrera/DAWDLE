@@ -6,27 +6,11 @@ html{
 
 #PRINCIPAL {
     /*esconder de momento con */
-    /*display:none;*/
+    display:none;
     text-align: center;
     text-shadow: 1px 2px 2px  rgb(255, 255, 255);;
 }
 
-/* #JUGAR{
-
-  
-  background-color: #007bff; 
-  color: white;              
-  padding: 10px 20px;       
-  border: none;              
-  border-radius: 5px;        
-  font-size: 16px;           
-  cursor: pointer;          
-  transition: background-color 0.3s ease; 
-}
-
-#JUGAR:hover {
-  background-color: #0056b3; 
-} */
 
 #JUGAR {
   background-color: transparent; 
@@ -77,7 +61,9 @@ form{
     margin-left: 35%;
     margin-right: 35%;
     border-radius: 3rem;
-    box-shadow: 5px 5px 5px 5px rgba(10, 36, 107, 0.2);;
+    box-shadow: 8px 8px 0px 0px black; /* sombra dura, sin blur, típica de UI retro */
+
+    
 }
 
 label {
@@ -87,3 +73,68 @@ label {
 
 }
 
+/*
+
+PRUEBA DIVS TECLADO
+
+*/
+
+
+/* Contenedor principal del teclado */
+.teclado-container {
+    display: inline-block;
+    background-color: #e2e8f0;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    position: fixed;
+    left: 25%;
+    bottom: 5%;
+}
+
+.teclado-fila {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.teclado-fila:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilo base de los botones */
+.tecla {
+    background-color: #cbd5e1;
+    color: #0f172a;
+    border: none;
+    border-radius: 4px;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 16px 24px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.1s;
+    min-width: 40px;
+    text-align: center;
+}
+
+.tecla:hover {
+    background-color: #94a3b8;
+}
+.tecla:active {
+    background-color: #64748b;
+}
+
+/* Estilo especial para la fila superior (vocales con tilde) */
+.fila-tildes .tecla {
+    min-width: 65px;
+}
+
+/* Botones de acción */
+.tecla-accion {
+    min-width: 60px;
+    font-size: 14px;
+}
