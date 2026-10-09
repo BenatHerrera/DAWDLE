@@ -1,140 +1,82 @@
-html{
-
-    margin-top: 10%;
+:root {
+    --color-ok: #6aaa64;
+    --color-existe: #c9b458;
+    --color-no: #787c7e;
+    --color-borde: #d3d6da;
+    --color-tecla: #d3d6da;
+    --color-texto: #222;
+    --color-fondo: #fff;
 }
 
+html { margin-top: 3%; font-family: Arial, sans-serif; color: var(--color-texto); }
+body { margin: 0; background-color: var(--color-fondo); }
+.oculto { display: none !important; }
 
-#PRINCIPAL {
-    /*esconder de momento con */
-    display:none;
-    text-align: center;
-    text-shadow: 1px 2px 2px  rgb(255, 255, 255);;
+/* ===== Pantalla inicial ===== */
+#PRINCIPAL { text-align: center; }
+.subtitulo { color: dimgray; }
+form { margin: 20px auto; width: fit-content; text-align: center; }
+label { font-size: 14px; color: #555; }
+
+#intentos, #letras {
+    width: 60px; height: 35px; margin-top: 10px;
+    border: 1px solid var(--color-borde); border-radius: 4px;
+    text-align: center; font-size: 16px;
 }
 
+#JUGAR, #REINICIAR {
+    display: block; margin: 25px auto 0;
+    background-color: var(--color-texto); color: white;
+    border: none; border-radius: 4px;
+    padding: 12px 35px; font-size: 16px; font-weight: bold;
+    cursor: pointer; transition: background-color 0.2s;
+}
+#JUGAR:hover, #REINICIAR:hover { background-color: #444; }
+.mensaje { color: #b00020; min-height: 1em; }
 
-#JUGAR {
-  background-color: transparent; 
-  border: none;                   
-  padding: 0;                     
-  cursor: pointer;
-  transition: transform 0.2s ease; /* efecto al pasar el ratón */
+/* ===== Tablero (Grid) ===== */
+.wordle-cajas {
+    display: grid;
+    gap: 5px;
+    width: fit-content;
+    margin: 0 auto 220px;
+}
+.fila-wordle {
+    display: grid;
+    grid-template-columns: repeat(var(--letras), 55px);
+    gap: 5px;
+}
+.casilla {
+    width: 55px; height: 55px;
+    border: 2px solid var(--color-borde);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; font-weight: bold; text-transform: uppercase;
 }
 
-#JUGAR:hover {
-  transform: scale(1.05); /*  la imagen crece un poco al pasar el ratón */
-}
-
-#JUGAR img {
-  width: 100px;   
-  height: 100px;
-  display: block;
-}
-
-
-
-
-
-#intentos{
-    margin-top: 0.5rem;
-    width: 50px;
-    align-items: stretch;
-    text-align: end;
-    background-color: rgb(255, 255, 255);
-    border-radius: 12%;
-    
-
-}
-
-#letras{
-    margin-top: 0.5rem;
-    width: 50px;
-    align-items: stretch;
-    text-align: end;
-    background-color: rgb(255, 255, 255);
-    border-radius: 12%;
-    
-}
-
-form{
-    background-color: rgb(241, 29, 72);
-    align-items: center;
-    margin-left: 35%;
-    margin-right: 35%;
-    border-radius: 3rem;
-    box-shadow: 8px 8px 0px 0px black; /* sombra dura, sin blur, típica de UI retro */
-
-    
-}
-
-label {
-    font-family: 'Pixel Code', 'ArcadeClassic', monospace;
-    font-smooth: never;
-    -webkit-font-smoothing: none;
-
-}
-
-/*
-
-PRUEBA DIVS TECLADO
-
-*/
-
-
-/* Contenedor principal del teclado */
+/* ===== Teclado (Flexbox) ===== */
 .teclado-container {
-    display: inline-block;
-    background-color: #e2e8f0;
-    padding: 12px;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-    position: fixed;
-    left: 25%;
-    bottom: 5%;
+    position: fixed; left: 50%; bottom: 3%;
+    transform: translateX(-50%);
+    padding: 10px;
 }
-
-.teclado-fila {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-    margin-bottom: 6px;
-}
-
-.teclado-fila:last-child {
-    margin-bottom: 0;
-}
-
-/* Estilo base de los botones */
+.teclado-fila { display: flex; justify-content: center; gap: 5px; margin-bottom: 5px; }
 .tecla {
-    background-color: #cbd5e1;
-    color: #0f172a;
-    border: none;
-    border-radius: 4px;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 16px 24px;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.1s;
-    min-width: 40px;
-    text-align: center;
+    background-color: var(--color-tecla); color: var(--color-texto);
+    border: none; border-radius: 4px;
+    font-size: 14px; font-weight: bold; padding: 15px 12px;
+    cursor: pointer; user-select: none; transition: background-color 0.1s;
 }
+.tecla:hover { background-color: #bbb; }
+.tecla-accion { min-width: 55px; font-size: 12px; }
 
-.tecla:hover {
-    background-color: #94a3b8;
-}
-.tecla:active {
-    background-color: #64748b;
-}
+/* ===== Colores (casillas y teclas) ===== */
+.ok     { background-color: var(--color-ok);     border-color: var(--color-ok);     color: white; }
+.existe { background-color: var(--color-existe); border-color: var(--color-existe); color: white; }
+.no     { background-color: var(--color-no);     border-color: var(--color-no);     color: white; }
 
-/* Estilo especial para la fila superior (vocales con tilde) */
-.fila-tildes .tecla {
-    min-width: 65px;
-}
-
-/* Botones de acción */
-.tecla-accion {
-    min-width: 60px;
-    font-size: 14px;
-}
+/* ===== Historial ===== */
+#historial { text-align: center; }
+#lista-partidas { list-style: none; padding: 0; margin: 20px auto; width: fit-content; text-align: left; }
+#lista-partidas li { padding: 8px 14px; margin-bottom: 6px; border-radius: 4px; border-left: 6px solid; background: #f4f4f4; }
+#lista-partidas li.ganada  { border-color: var(--color-ok); }
+#lista-partidas li.perdida { border-color: #b00020; }

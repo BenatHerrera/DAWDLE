@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>DAWDLE</title>
+    <link rel="stylesheet" href="css/DAWDLE.css">
+    <script src="js/DAWDLE.js" defer></script>
+</head>
+<body>
+    <!-- Pantalla inicial -->
+    <div id="PRINCIPAL">
+        <form>
+            <h1>DAWDLE</h1>
+            <p class="subtitulo">(Just Another Wordle Clone)</p>
+
+            <label for="intentos"><strong>Intentos</strong></label><br>
+            <select id="intentos">
+                <option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option>
+                <option value="5">5</option><option value="6" selected>6</option>
+                <option value="7">7</option><option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <br><br>
+
+            <label for="letras"><strong>Letras</strong></label><br>
+            <select id="letras">
+                <option value="4">4</option><option value="5" selected>5</option>
+                <option value="6">6</option><option value="7">7</option>
+            </select>
+
+            <button id="JUGAR" type="button">JUGAR</button>
+            <p id="mensaje" class="mensaje"></p>
+        </form>
+    </div>
+
+    <!-- Juego -->
+    <div id="juego" class="oculto">
+        <div class="wordle-cajas"></div>
+        <div class="teclado-container"></div>
+    </div>
+
+    <!-- Historial -->
+    <div id="historial" class="oculto">
+        <h2 id="titulo-final"></h2>
+        <ul id="lista-partidas"></ul>
+        <button id="REINICIAR" type="button">JUGAR DE NUEVO</button>
+    </div>
+</body>
+</html>
